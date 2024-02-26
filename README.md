@@ -1,2 +1,2 @@
 # next_learning
-small project to familiarize myself with nextjs and ts
+small project to familiarize myself with nestjs and ts
