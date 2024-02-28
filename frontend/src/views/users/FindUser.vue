@@ -1,8 +1,8 @@
 <template>
   <nav>
-    <router-link to="/user/create"> Create new user </router-link> |
-    <router-link to="/user/find"> Find user </router-link> |
-    <router-link to="/user"> User list </router-link>
+    <router-link to="/users/create"> Create new user </router-link> |
+    <router-link to="/users/find"> Find user </router-link> |
+    <router-link to="/users"> User list </router-link>
   </nav>
   <hr>
   <div class="text-center">
@@ -16,7 +16,7 @@
         <div class="form-group col-md-4 pull-right">
           <button class="btn btn-success" type="submit" id="submit_field"> Search User </button>
         </div>
-        <p v-if="Object.keys(user).length"> {{ user.id }}: {{ user.firstName }} {{ user.lastName }}, {{ user.age }} </p>
+        <p v-if="Object.keys(user).length"> {{ user.firstName }} {{ user.lastName }}, {{ user.age }} </p>
       </form>
     </div>
   </div>

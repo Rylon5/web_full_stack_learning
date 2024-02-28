@@ -1,8 +1,8 @@
 <template>
   <nav>
-    <router-link to="/user/create"> Create new user </router-link> |
-    <router-link to="/user/find"> Find user </router-link> |
-    <router-link to="/user"> User list </router-link>
+    <router-link to="/users/create"> Create new user </router-link> |
+    <router-link to="/users/find"> Find user </router-link> |
+    <router-link to="/users"> User list </router-link>
   </nav>
   <hr>
   <div>

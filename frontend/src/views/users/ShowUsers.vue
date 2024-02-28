@@ -1,8 +1,8 @@
 <template>
   <nav>
-    <router-link to="/user/create"> Create new user </router-link> |
-    <router-link to="/user/find"> Find user </router-link> |
-    <router-link to="/user"> User list </router-link>
+    <router-link to="/users/create"> Create new user </router-link> |
+    <router-link to="/users/find"> Find user </router-link> |
+    <router-link to="/users"> User list </router-link>
   </nav>
   <div class="text-center">
     <div class="col-sm-12">
@@ -32,8 +32,8 @@ export default {
   methods: {
     fetchUsers() {
       axios
-          .get(`${server.baseURL}/user`)
-          .then(data => (this.users = data.data));
+          .get(`${server.baseURL}/users`)
+          .then(response => (this.users = response.data));
     },
     navigate() {
       router.go(-1);

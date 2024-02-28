@@ -1,8 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import ShowUserComponent from '@/components/user/ShowUser.vue'
-import CreateUserComponent from '@/components/user/CreateUser.vue'
-import FindUserComponent from "@/components/user/FindUser.vue";
+import ShowUserView from '@/views/users/ShowUsers.vue'
+import CreateUserView from '@/views/users/CreateUser.vue'
+import FindUserView from "@/views/users/FindUser.vue";
+import ShowProjects from "@/views/projects/ShowProjects.vue";
 
 const routes = [
   {
@@ -19,19 +20,24 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
   },
   {
-    path: '/user',
-    name: 'user',
-    component: ShowUserComponent
+    path: '/users',
+    name: 'users',
+    component: ShowUserView
   },
   {
-    path: '/user/create',
+    path: '/users/create',
     name: 'create',
-    component: CreateUserComponent
+    component: CreateUserView
   },
   {
-    path: '/user/find',
+    path: '/users/find',
     name: 'find',
-    component: FindUserComponent
+    component: FindUserView
+  },
+  {
+    path: '/projects',
+    name: 'projects',
+    component: ShowProjects
   }
 ]
 
