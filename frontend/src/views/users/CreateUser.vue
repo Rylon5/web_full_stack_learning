@@ -56,8 +56,8 @@ export default {
     },
     __submitToServer(data) {
       // eslint-disable-next-line no-unused-vars
-      axios.post(`${server.baseURL}/user`, data).then(data => {
-        router.push({ name: "create" });
+      axios.post(`${server.baseURL}/users`, data).then(response => {
+        router.push({ name: "users/create" });
       });
     }
   }

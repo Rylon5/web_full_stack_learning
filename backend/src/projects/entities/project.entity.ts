@@ -8,7 +8,7 @@ export class Project {
     @Column({ name: 'name', nullable: false, length: 64 })
     name: string;
 
-    @Column({ name: 'description', nullable: true })
+    @Column({ name: 'description', nullable: true, default: '' })
     description: string;
 
     @Column({

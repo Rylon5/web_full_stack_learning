@@ -1,0 +1,73 @@
+<template>
+  <nav>
+    <router-link to="/projects/create">Create project</router-link> |
+    <router-link to="/projects">Project list</router-link>
+  </nav>
+  <hr>
+  <div>
+    <div class="col-md-12 form-wrapper">
+      <h2> Create User </h2>
+      <form id="create-user-form" @submit.prevent="createProject">
+        <div class="form-group col-md-12">
+          <label for="name"> Project name: </label>
+          <input type="text" id="name" v-model="name" name="name" class="form-control" placeholder="Enter project name">
+        </div>
+        <div class="form-group col-md-12">
+          <label for="description"> Project description: </label>
+          <input type="text" id="description" v-model="description" name="description" class="form-control" placeholder="Enter project description">
+        </div>
+        <div class="form-group col-md-12">
+          <label for="link"> Project link: </label>
+          <input type="text" id="link"  v-model="link" name="link" placeholder="Enter project link" class="form-control">
+        </div>
+
+        <div class="form-group col-md-4 pull-right">
+          <button class="btn btn-success" type="submit"> Create Project </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</template>
+
+<script>
+import { server } from "@/utils/helper"
+import axios from "axios";
+import router from "@/router";
+  export default {
+    data() {
+      return {
+        name: "",
+        description: "",
+        link: ""
+      };
+    },
+    methods: {
+      createProject() {
+        let projectData = {
+          name: this.name,
+          description: this.description,
+          link: this.link
+        }
+        this.name = "";
+        this.description = "";
+        this.link = "";
+        this.__submitToServer(projectData)
+      },
+      __submitToServer(data) {
+        // eslint-disable-next-line no-unused-vars
+        axios.post(`${server.baseURL}/projects`, data).then(response => {
+          router.push({ name: "projects/create" }) });
+      }
+    }
+  }
+</script>
+
+<style>
+  label {
+    margin-right: 10px;
+  }
+
+  .form-group {
+    margin: 5px 0 5px 0;
+  }
+</style>

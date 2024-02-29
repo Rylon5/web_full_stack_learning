@@ -4,15 +4,36 @@
     <router-link to="/users/find"> Find user </router-link> |
     <router-link to="/users"> User list </router-link>
   </nav>
-  <div class="text-center">
-    <div class="col-sm-12">
-      <hr>
-      <h5><span class="glyphicon glyphicon-time"></span> Users by id: </h5>
-      <div class="col-md-4" v-for="user in users" :key="user.id">
-      <p> {{ user.id }}: {{ user.firstName }} {{ user.lastName }}, {{ user.age }} </p>
-      </div>
-    </div>
+  <div class="container text-center">
+    <hr>
+    <h5><span class="glyphicon glyphicon-time"></span> Users: </h5>
   </div>
+  <table class="container text-center">
+    <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">First name</th>
+      <th scope="col">Last name</th>
+      <th scope="col">Age</th>
+    </tr>
+    </thead>
+    <tbody v-for="user in users" :key="user.id">
+    <tr>
+      <td>
+        {{ user.id }}
+      </td>
+      <td>
+        {{ user.firstName }}
+      </td>
+      <td>
+        {{ user.lastName }}
+      </td>
+      <td>
+        {{ user.age }}
+      </td>
+    </tr>
+    </tbody>
+  </table>
 </template>
 
 <script>
@@ -46,5 +67,24 @@ export default {
   h5 {
     font-weight: bold;
     font-size: large;
+  }
+
+   table {
+     border-collapse: collapse;
+     border: 2px solid rgb(140 140 140);
+     font-family: sans-serif;
+     font-size: 0.8rem;
+     letter-spacing: 1px;
+     margin-left: auto;
+     margin-right: auto;
+   }
+
+  th, td {
+    border: 1px solid rgb(160 160 160);
+    padding: 8px 10px;
+  }
+
+  td {
+    text-align: center;
   }
 </style>

@@ -1,6 +1,10 @@
 <template>
+  <nav>
+    <router-link to="/projects/create">Create project</router-link> |
+    <router-link to="/projects">Project list</router-link>
+  </nav>
+  <hr>
   <div class="container text-center">
-    <hr>
     <h5><span class="glyphicon glyphicon-time"></span> Projects: </h5>
   </div>
   <table class="container text-center">
@@ -20,7 +24,7 @@
           {{ project.description }}
         </td>
         <td>
-          {{ project.link }}
+          <a :href="project.link">{{ project.link }}</a>
         </td>
       </tr>
     </tbody>

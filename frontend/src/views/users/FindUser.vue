@@ -36,7 +36,7 @@ export default {
   methods: {
     getUser() {
       axios
-          .get(`${server.baseURL}/user/${this.id}`)
+          .get(`${server.baseURL}/users/${this.id}`)
           .then(data => (this.user = data.data));
     },
   }
