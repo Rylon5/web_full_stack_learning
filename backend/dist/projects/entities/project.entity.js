@@ -23,7 +23,7 @@ __decorate([
     __metadata("design:type", String)
 ], Project.prototype, "name", void 0);
 __decorate([
-    (0, typeorm_1.Column)({ name: 'description', nullable: true }),
+    (0, typeorm_1.Column)({ name: 'description', nullable: true, default: '' }),
     __metadata("design:type", String)
 ], Project.prototype, "description", void 0);
 __decorate([

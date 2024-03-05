@@ -15,6 +15,16 @@ class CreateUserDto {
 }
 exports.CreateUserDto = CreateUserDto;
 __decorate([
+    (0, class_validator_1.IsNotEmpty)({ message: 'username must not be empty' }),
+    (0, class_validator_1.IsString)(),
+    __metadata("design:type", String)
+], CreateUserDto.prototype, "username", void 0);
+__decorate([
+    (0, class_validator_1.IsNotEmpty)({ message: 'password must not be empty' }),
+    (0, class_validator_1.IsString)(),
+    __metadata("design:type", String)
+], CreateUserDto.prototype, "password", void 0);
+__decorate([
     (0, class_validator_1.IsNotEmpty)({ message: 'first name must not be empty' }),
     (0, class_validator_1.IsString)(),
     __metadata("design:type", String)

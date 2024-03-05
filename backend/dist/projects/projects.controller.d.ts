@@ -7,6 +7,7 @@ export declare class ProjectController {
     create(createProjectDto: CreateProjectDto): Promise<import("./entities/project.entity").Project>;
     findAll(): Promise<import("./entities/project.entity").Project[]>;
     findOne(id: string): Promise<import("./entities/project.entity").Project>;
+    findOneByName(name: string): Promise<import("./entities/project.entity").Project>;
     update(id: string, updateProjectDto: UpdateProjectDto): Promise<UpdateProjectDto & import("./entities/project.entity").Project>;
     remove(id: string): Promise<import("typeorm").DeleteResult>;
 }

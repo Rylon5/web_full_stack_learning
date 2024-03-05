@@ -19,6 +19,14 @@ __decorate([
     __metadata("design:type", Number)
 ], User.prototype, "id", void 0);
 __decorate([
+    (0, typeorm_1.Column)({ name: 'username', nullable: false, length: 128 }),
+    __metadata("design:type", String)
+], User.prototype, "username", void 0);
+__decorate([
+    (0, typeorm_1.Column)({ name: 'password', nullable: false, length: 64 }),
+    __metadata("design:type", String)
+], User.prototype, "password", void 0);
+__decorate([
     (0, typeorm_1.Column)({ name: 'first name', nullable: false, length: 64 }),
     __metadata("design:type", String)
 ], User.prototype, "firstName", void 0);

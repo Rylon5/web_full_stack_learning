@@ -3,7 +3,7 @@ import { CreateProjectDto } from './dto/create-project.dto';
 import { UpdateProjectDto } from './dto/update-project.dto';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Project } from './entities/project.entity';
-import { Repository } from 'typeorm';
+import {Like, Repository} from 'typeorm';
 
 @Injectable()
 export class ProjectService {
@@ -24,6 +24,15 @@ export class ProjectService {
         const project = await this.projectRepository.findOneBy({ id: id });
         if (!project) {
             throw new NotFoundException(`Object with ID ${id} not found`);
+        }
+        return project;
+    }
+
+    // update find with real logic to find correct object
+    async findOneByName(name: string) {
+        const project = await this.projectRepository.findOneBy({ name: name });
+        if (!project) {
+            throw new NotFoundException(`Object with name ${name} not found`);
         }
         return project;
     }

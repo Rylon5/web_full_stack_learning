@@ -30,6 +30,11 @@ export class ProjectController {
         return this.projectService.findOne(+id);
     }
 
+    @Get(':name')
+    findOneByName(@Param('name') name: string) {
+        return this.projectService.findOneByName(name);
+    }
+
     @Patch(':id')
     update(
         @Param('id') id: string,

@@ -1,6 +1,14 @@
 import { IsNotEmpty, IsNumber, IsPositive, IsString } from 'class-validator';
 
 export class CreateUserDto {
+    @IsNotEmpty({ message: 'username must not be empty' })
+    @IsString()
+    username: string;
+
+    @IsNotEmpty({ message: 'password must not be empty' })
+    @IsString()
+    password: string;
+
     @IsNotEmpty({ message: 'first name must not be empty' })
     @IsString()
     firstName: string;

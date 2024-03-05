@@ -30,6 +30,9 @@ let ProjectController = class ProjectController {
     findOne(id) {
         return this.projectService.findOne(+id);
     }
+    findOneByName(name) {
+        return this.projectService.findOneByName(name);
+    }
     update(id, updateProjectDto) {
         return this.projectService.update(+id, updateProjectDto);
     }
@@ -58,6 +61,13 @@ __decorate([
     __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", void 0)
 ], ProjectController.prototype, "findOne", null);
+__decorate([
+    (0, common_1.Get)(':name'),
+    __param(0, (0, common_1.Param)('name')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", void 0)
+], ProjectController.prototype, "findOneByName", null);
 __decorate([
     (0, common_1.Patch)(':id'),
     __param(0, (0, common_1.Param)('id')),

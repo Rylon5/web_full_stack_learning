@@ -35,6 +35,15 @@ let UserService = class UserService {
         }
         return user;
     }
+    async findOneByName(username) {
+        const user = await this.userRepository.findOneBy({
+            username: (0, typeorm_2.Like)(`${username}`),
+        });
+        if (!user) {
+            throw new common_1.NotFoundException(`User with name ${username} not found`);
+        }
+        return user;
+    }
     async update(id, updateUserDto) {
         const user = await this.findOne(id);
         Object.assign(user, updateUserDto);

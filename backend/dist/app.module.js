@@ -15,6 +15,7 @@ const typeorm_1 = require("@nestjs/typeorm");
 const user_entity_1 = require("./users/entities/user.entity");
 const projects_module_1 = require("./projects/projects.module");
 const project_entity_1 = require("./projects/entities/project.entity");
+const auth_module_1 = require("./auth/auth.module");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
@@ -29,6 +30,7 @@ exports.AppModule = AppModule = __decorate([
                 synchronize: true,
                 entities: [user_entity_1.User, project_entity_1.Project],
             }),
+            auth_module_1.AuthModule,
         ],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],

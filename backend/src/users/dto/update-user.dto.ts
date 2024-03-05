@@ -9,6 +9,14 @@ import {
 } from 'class-validator';
 
 export class UpdateUserDto extends PartialType(CreateUserDto) {
+    @IsNotEmpty({ message: 'username must not be empty' })
+    @IsString()
+    username?: string;
+
+    @IsNotEmpty({ message: 'password must not be empty' })
+    @IsString()
+    password?: string;
+
     @IsNotEmpty({ message: 'first name must not be empty' })
     @IsString()
     firstName?: string;

@@ -3,7 +3,7 @@ import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { User } from './entities/user.entity';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Repository } from 'typeorm';
+import { Like, Repository } from 'typeorm';
 
 @Injectable()
 export class UserService {
@@ -25,6 +25,16 @@ export class UserService {
         const user = await this.userRepository.findOne({ where: { id: id } });
         if (!user) {
             throw new NotFoundException(`Object with ID ${id} not found`);
+        }
+        return user;
+    }
+
+    async findOneByName(username: string) {
+        const user = await this.userRepository.findOneBy({
+            username: Like(`${username}`),
+        });
+        if (!user) {
+            throw new NotFoundException(`User with name ${username} not found`);
         }
         return user;
     }

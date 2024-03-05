@@ -35,6 +35,13 @@ let ProjectService = class ProjectService {
         }
         return project;
     }
+    async findOneByName(name) {
+        const project = await this.projectRepository.findOneBy({ name: name });
+        if (!project) {
+            throw new common_1.NotFoundException(`Object with name ${name} not found`);
+        }
+        return project;
+    }
     async update(id, updateProjectDto) {
         const project = this.projectRepository.findOneBy({ id: id });
         if (!project) {
