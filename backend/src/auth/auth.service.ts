@@ -9,7 +9,7 @@ export class AuthService {
         private jwtService: JwtService,
     ) {}
 
-    async signIn(
+    async login(
         username: string,
         pass: string,
     ): Promise<{ access_token: string }> {

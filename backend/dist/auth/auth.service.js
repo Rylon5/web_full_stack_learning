@@ -18,7 +18,7 @@ let AuthService = class AuthService {
         this.userService = userService;
         this.jwtService = jwtService;
     }
-    async signIn(username, pass) {
+    async login(username, pass) {
         const user = await this.userService.findOneByName(username);
         if (user?.password !== pass) {
             throw new common_1.UnauthorizedException('Incorrect password!');

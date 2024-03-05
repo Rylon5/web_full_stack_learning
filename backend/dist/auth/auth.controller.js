@@ -24,8 +24,8 @@ let AuthController = class AuthController {
         this.authService = authService;
         this.userService = userService;
     }
-    signIn(signInDto) {
-        return this.authService.signIn(signInDto.username, signInDto.password);
+    login(signInDto) {
+        return this.authService.login(signInDto.username, signInDto.password);
     }
     getProfile(req) {
         return req.user;
@@ -42,7 +42,7 @@ __decorate([
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [sign_in_dto_1.SignInDto]),
     __metadata("design:returntype", void 0)
-], AuthController.prototype, "signIn", null);
+], AuthController.prototype, "login", null);
 __decorate([
     (0, common_1.UseGuards)(auth_guard_1.AuthGuard),
     (0, common_1.Get)('profile'),
