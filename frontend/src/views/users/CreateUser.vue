@@ -7,7 +7,7 @@
   <hr>
   <div>
     <div class="col-md-12 form-wrapper">
-      <h2> Create User </h2>
+      <h2> Register new user </h2>
       <form id="create-user-form" @submit.prevent="registerUser">
         <div class="form-group col-md-12">
           <label for="username"> Username </label>
@@ -50,6 +50,8 @@
 import axios from "axios";
 import { server } from "@/utils/helper";
 import router from "../../router";
+import { toast } from "vue3-toastify";
+import "vue3-toastify/dist/index.css";
 
 export default {
   data() {
@@ -83,6 +85,9 @@ export default {
         this.age = null;
         this.email = '';
         this.__submitToServer(userData);
+      }
+      else {
+        toast.error("Passwords must match");
       }
     },
     __submitToServer(data) {
