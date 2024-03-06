@@ -31,7 +31,7 @@ export class UserService {
 
     async findOneByName(username: string) {
         const user = await this.userRepository.findOneBy({
-            username: Like(`${username}`),
+            username: username,
         });
         if (!user) {
             throw new NotFoundException(`User with name ${username} not found`);

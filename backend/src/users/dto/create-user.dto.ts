@@ -1,4 +1,4 @@
-import { IsNotEmpty, IsNumber, IsPositive, IsString } from 'class-validator';
+import {IsEmail, IsNotEmpty, IsNumber, IsPositive, IsString} from 'class-validator';
 
 export class CreateUserDto {
     @IsNotEmpty({ message: 'username must not be empty' })
@@ -21,4 +21,8 @@ export class CreateUserDto {
     @IsNumber()
     @IsPositive({ message: 'only positive numbers allowed' })
     age: number;
+
+    @IsNotEmpty({ message: 'mail must not be empty ' })
+    @IsEmail()
+    mail: string;
 }

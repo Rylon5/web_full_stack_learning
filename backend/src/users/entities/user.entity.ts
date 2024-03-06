@@ -19,4 +19,7 @@ export class User {
 
     @Column({ name: 'age', nullable: false })
     age: number;
+
+    @Column({ name: 'mail', nullable: false, length: 128 })
+    mail: string;
 }

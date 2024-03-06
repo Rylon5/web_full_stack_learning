@@ -26,8 +26,8 @@ const routes = [
     component: ShowUserView
   },
   {
-    path: '/users/create',
-    name: 'users/create',
+    path: '/users/register',
+    name: 'users/register',
     component: CreateUserView
   },
   {

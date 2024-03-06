@@ -1,6 +1,6 @@
 <template>
   <nav>
-    <router-link to="/users/create"> Create new user </router-link> |
+    <router-link to="/users/register"> Register </router-link> |
     <router-link to="/users/find"> Find user </router-link> |
     <router-link to="/users"> User list </router-link>
   </nav>
@@ -8,22 +8,38 @@
   <div>
     <div class="col-md-12 form-wrapper">
       <h2> Create User </h2>
-      <form id="create-user-form" @submit.prevent="createUser">
+      <form id="create-user-form" @submit.prevent="registerUser">
+        <div class="form-group col-md-12">
+          <label for="username"> Username </label>
+          <input type="text" id="username" v-model="username" name="username" class="form-control" placeholder="Enter username" required>
+        </div>
+        <div class="form-group col-md-12">
+          <label for="password"> Password </label>
+          <input type="password" id="password" v-model="password" name="password" class="form-control" placeholder="Enter password" required>
+        </div>
+        <div class="form-group col-md-12">
+          <label for="password_repeat"> Repeat password </label>
+          <input type="password" id="password_repeat" v-model="password_repeat" name="password_repeat" class="form-control" placeholder="Enter password again" required>
+        </div>
         <div class="form-group col-md-12">
           <label for="firstName"> First Name </label>
-          <input type="text" id="firstName" v-model="firstName" name="firstName" class="form-control" placeholder="Enter first name">
+          <input type="text" id="firstName" v-model="firstName" name="firstName" class="form-control" placeholder="Enter first name" required>
         </div>
         <div class="form-group col-md-12">
           <label for="lastName"> Last Name </label>
-          <input type="text" id="lastName" v-model="lastName" name="lastName" class="form-control" placeholder="Enter last name">
+          <input type="text" id="lastName" v-model="lastName" name="lastName" class="form-control" placeholder="Enter last name" required>
         </div>
         <div class="form-group col-md-12">
           <label for="age"> Age </label>
-          <input type="number" id="age"  v-model="age" placeholder="Enter age" class="form-control" min="0">
+          <input type="number" id="age"  v-model="age" placeholder="Enter age" class="form-control" min="0" required>
+        </div>
+        <div class="form-group col-md-12">
+          <label for="email"> Email </label>
+          <input type="email" id="email"  v-model="email" placeholder="Enter mail adress" class="form-control" required>
         </div>
 
         <div class="form-group col-md-4 pull-right">
-          <button class="btn btn-success" type="submit"> Create User </button>
+          <button class="btn btn-success" type="submit"> Register user </button>
         </div>
       </form>
     </div>
@@ -34,30 +50,45 @@
 import axios from "axios";
 import { server } from "@/utils/helper";
 import router from "../../router";
+
 export default {
   data() {
     return {
+      username: "",
+      password: "",
+      password_repeat: "",
       firstName: "",
       lastName: "",
       age: "",
+      email: "",
     };
   },
   methods: {
-    createUser() {
+    registerUser() {
       let userData = {
+        username: this.username,
+        password: this.password,
+        password_repeat: this.password_repeat,
         firstName: this.firstName,
         lastName: this.lastName,
         age: this.age,
+        email: this.email,
       };
-      this.firstName = '';
-      this.lastName = '';
-      this.age = null;
-      this.__submitToServer(userData);
+      if (this.password === this.password_repeat) {
+        this.username = '';
+        this.password = '';
+        this.password_repeat = '';
+        this.firstName = '';
+        this.lastName = '';
+        this.age = null;
+        this.email = '';
+        this.__submitToServer(userData);
+      }
     },
     __submitToServer(data) {
       // eslint-disable-next-line no-unused-vars
-      axios.post(`${server.baseURL}/users`, data).then(response => {
-        router.push({ name: "users/create" });
+      axios.post(`${server.baseURL}/auth`, data).then(response => {
+        router.push({ name: "auth/register" });
       });
     }
   }
