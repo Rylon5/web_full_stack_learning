@@ -37,7 +37,7 @@ let UserService = class UserService {
     }
     async findOneByName(username) {
         const user = await this.userRepository.findOneBy({
-            username: (0, typeorm_2.Like)(`${username}`),
+            username: username,
         });
         if (!user) {
             throw new common_1.NotFoundException(`User with name ${username} not found`);

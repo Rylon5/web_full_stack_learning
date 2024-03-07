@@ -38,6 +38,10 @@ __decorate([
     (0, typeorm_1.Column)({ name: 'age', nullable: false }),
     __metadata("design:type", Number)
 ], User.prototype, "age", void 0);
+__decorate([
+    (0, typeorm_1.Column)({ name: 'mail', nullable: false, length: 128 }),
+    __metadata("design:type", String)
+], User.prototype, "mail", void 0);
 exports.User = User = __decorate([
     (0, typeorm_1.Entity)('user')
 ], User);

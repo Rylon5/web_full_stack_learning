@@ -34,8 +34,8 @@
           <input type="number" id="age"  v-model="age" placeholder="Enter age" class="form-control" min="0" required>
         </div>
         <div class="form-group col-md-12">
-          <label for="email"> Email </label>
-          <input type="email" id="email"  v-model="email" placeholder="Enter mail adress" class="form-control" required>
+          <label for="mail"> Email </label>
+          <input type="email" id="mail"  v-model="mail" placeholder="Enter mail adress" class="form-control" required>
         </div>
 
         <div class="form-group col-md-4 pull-right">
@@ -62,7 +62,7 @@ export default {
       firstName: "",
       lastName: "",
       age: "",
-      email: "",
+      mail: "",
     };
   },
   methods: {
@@ -74,7 +74,7 @@ export default {
         firstName: this.firstName,
         lastName: this.lastName,
         age: this.age,
-        email: this.email,
+        mail: this.mail,
       };
       if (this.password === this.password_repeat) {
         this.username = '';
@@ -83,7 +83,7 @@ export default {
         this.firstName = '';
         this.lastName = '';
         this.age = null;
-        this.email = '';
+        this.mail = '';
         this.__submitToServer(userData);
       }
       else {
@@ -92,8 +92,8 @@ export default {
     },
     __submitToServer(data) {
       // eslint-disable-next-line no-unused-vars
-      axios.post(`${server.baseURL}/auth`, data).then(response => {
-        router.push({ name: "auth/register" });
+      axios.post(`${server.baseURL}/auth/register/`, data).then(response => {
+        router.push({ name: "home" });
       });
     }
   }

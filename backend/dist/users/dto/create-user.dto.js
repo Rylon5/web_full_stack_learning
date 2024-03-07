@@ -40,4 +40,9 @@ __decorate([
     (0, class_validator_1.IsPositive)({ message: 'only positive numbers allowed' }),
     __metadata("design:type", Number)
 ], CreateUserDto.prototype, "age", void 0);
+__decorate([
+    (0, class_validator_1.IsNotEmpty)({ message: 'mail must not be empty ' }),
+    (0, class_validator_1.IsEmail)(),
+    __metadata("design:type", String)
+], CreateUserDto.prototype, "mail", void 0);
 //# sourceMappingURL=create-user.dto.js.map

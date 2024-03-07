@@ -71,3 +71,5 @@ node_modules
 *.sln
 *.sw?
 
+# database and content
+/db

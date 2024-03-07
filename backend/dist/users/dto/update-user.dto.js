@@ -32,16 +32,19 @@ __decorate([
     __metadata("design:type", String)
 ], UpdateUserDto.prototype, "firstName", void 0);
 __decorate([
-    (0, class_validator_1.IsOptional)(),
     (0, class_validator_1.IsNotEmpty)({ message: 'last name must not be empty' }),
     (0, class_validator_1.IsString)(),
     __metadata("design:type", String)
 ], UpdateUserDto.prototype, "lastName", void 0);
 __decorate([
-    (0, class_validator_1.IsOptional)(),
     (0, class_validator_1.IsNotEmpty)({ message: 'age must not be empty' }),
     (0, class_validator_1.IsNumber)(),
     (0, class_validator_1.IsPositive)({ message: 'only positive numbers allowed' }),
     __metadata("design:type", Number)
 ], UpdateUserDto.prototype, "age", void 0);
+__decorate([
+    (0, class_validator_1.IsNotEmpty)({ message: 'mail must not be empty ' }),
+    (0, class_validator_1.IsEmail)(),
+    __metadata("design:type", String)
+], UpdateUserDto.prototype, "mail", void 0);
 //# sourceMappingURL=update-user.dto.js.map
