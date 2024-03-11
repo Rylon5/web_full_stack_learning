@@ -1,10 +1,7 @@
 <template>
-  <nav>
-    <router-link to="/users/register"> Register </router-link> |
-    <router-link to="/users/find"> Find user </router-link> |
-    <router-link to="/users"> User list </router-link>
-  </nav>
-  <hr>
+  <div class="wrapper">
+    <UsersNavbar></UsersNavbar>
+  </div>
   <div>
     <div class="col-md-12 form-wrapper">
       <h2> Register new user </h2>
@@ -52,8 +49,10 @@ import { server } from "@/utils/helper";
 import router from "../../router";
 import { toast } from "vue3-toastify";
 import "vue3-toastify/dist/index.css";
+import UsersNavbar from "@/components/navbars/UsersNavbar.vue";
 
 export default {
+  components: {UsersNavbar},
   data() {
     return {
       username: "",

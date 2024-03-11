@@ -1,10 +1,7 @@
 <template>
-  <nav>
-    <router-link to="/users/register"> Register </router-link> |
-    <router-link to="/users/find"> Find user </router-link> |
-    <router-link to="/users"> User list </router-link>
-  </nav>
-  <hr>
+  <div class="wrapper">
+    <UsersNavbar></UsersNavbar>
+  </div>
   <div class="text-center">
     <div class="col-md-12 form-wrapper">
       <h2> Find User </h2>
@@ -25,8 +22,10 @@
 <script>
 import axios from "axios";
 import {server} from "@/utils/helper";
+import UsersNavbar from "@/components/navbars/UsersNavbar.vue";
 
 export default {
+  components: {UsersNavbar},
   data() {
     return {
       id: null,

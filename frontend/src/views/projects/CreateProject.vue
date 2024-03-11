@@ -1,9 +1,7 @@
 <template>
-  <nav>
-    <router-link to="/projects/create">Create project</router-link> |
-    <router-link to="/projects">Project list</router-link>
-  </nav>
-  <hr>
+  <div class="wrapper">
+    <ProjectsNavbar></ProjectsNavbar>
+  </div>
   <div>
     <div class="col-md-12 form-wrapper">
       <h2> Create User </h2>
@@ -33,7 +31,9 @@
 import { server } from "@/utils/helper"
 import axios from "axios";
 import router from "@/router";
+import ProjectsNavbar from "@/components/navbars/ProjectsNavbar.vue";
   export default {
+    components: {ProjectsNavbar},
     data() {
       return {
         name: "",
