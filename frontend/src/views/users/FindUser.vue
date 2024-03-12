@@ -1,7 +1,17 @@
 <template>
+<<<<<<< HEAD
   <div class="wrapper">
     <UsersNavbar></UsersNavbar>
   </div>
+=======
+  <nav>
+    <router-link to="/users/register"> Register </router-link> |
+    <router-link to="/users/login"> Login </router-link> |
+    <router-link to="/users/find"> Find user </router-link> |
+    <router-link to="/users"> User list </router-link>
+  </nav>
+  <hr>
+>>>>>>> feature-frontend-login
   <div class="text-center">
     <div class="col-md-12 form-wrapper">
       <h2> Find User </h2>
