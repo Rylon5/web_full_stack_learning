@@ -5,6 +5,7 @@ import CreateUserView from '@/views/users/CreateUser.vue'
 import FindUserView from "@/views/users/FindUser.vue";
 import ShowProjects from "@/views/projects/ShowProjects.vue";
 import CreateProject from "@/views/projects/CreateProject.vue";
+import LoginView from "@/views/users/LoginView.vue";
 
 const routes = [
   {
@@ -34,6 +35,11 @@ const routes = [
     path: '/users/find',
     name: 'users/find',
     component: FindUserView
+  },
+  {
+    path: '/users/login',
+    name: 'users/login',
+    component: LoginView
   },
   {
     path: '/projects',
