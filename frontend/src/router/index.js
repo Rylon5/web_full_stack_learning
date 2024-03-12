@@ -29,12 +29,12 @@ const routes = [
   {
     path: '/users/register',
     name: 'users/register',
-    component: CreateUserView
+    component: () => import('../views/users/CreateUser.vue')
   },
   {
     path: '/users/find',
     name: 'users/find',
-    component: FindUserView
+    component: () => import('../views/users/FindUser.vue')
   },
   {
     path: '/users/login',
@@ -49,7 +49,7 @@ const routes = [
   {
     path: '/projects/create',
     name: 'projects/create',
-    component: CreateProject
+    component: () => import('../views/projects/CreateProject.vue')
   }
 ]
 

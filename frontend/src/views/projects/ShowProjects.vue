@@ -1,9 +1,7 @@
 <template>
-  <nav>
-    <router-link to="/projects/create">Create project</router-link> |
-    <router-link to="/projects">Project list</router-link>
-  </nav>
-  <hr>
+  <div class="wrapper">
+    <ProjectsNavbar></ProjectsNavbar>
+  </div>
   <div class="container text-center">
     <h5><span class="glyphicon glyphicon-time"></span> Projects: </h5>
   </div>
@@ -35,7 +33,9 @@
 <script>
 import axios from "axios"
 import { server } from "@/utils/helper"
+import ProjectsNavbar from "@/components/navbars/ProjectsNavbar.vue";
 export default {
+  components: {ProjectsNavbar},
   data() {
     return {
       id: 0,
@@ -53,7 +53,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 table {
   border-collapse: collapse;
   border: 2px solid rgb(140 140 140);
@@ -64,12 +64,12 @@ table {
   margin-right: auto;
 }
 
-th, td {
+table th, td {
   border: 1px solid rgb(160 160 160);
   padding: 8px 10px;
 }
 
-td {
+table td {
   text-align: center;
 }
 </style>

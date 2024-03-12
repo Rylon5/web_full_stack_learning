@@ -26,8 +26,10 @@
 <script>
 import axios from "axios";
 import {server} from "@/utils/helper";
+import UsersNavbar from "@/components/navbars/UsersNavbar.vue";
 
 export default {
+  components: {UsersNavbar},
   data() {
     return {
       id: null,
