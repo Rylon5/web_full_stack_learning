@@ -33,10 +33,6 @@ const routes = [
     component: () => import('../views/users/FindUser.vue')
   },
   {
-    path: '/users/login',
-    name: 'users/login',
-  },
-  {
     path: '/projects',
     name: 'projects',
     component: ShowProjectsView
