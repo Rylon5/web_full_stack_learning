@@ -1,15 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import ShowUserView from '@/views/users/ShowUsers.vue'
-<<<<<<< HEAD
-import ShowProjectsView from "@/views/projects/ShowProjects.vue";
-=======
-import CreateUserView from '@/views/users/CreateUser.vue'
-import FindUserView from "@/views/users/FindUser.vue";
-import ShowProjects from "@/views/projects/ShowProjects.vue";
-import CreateProject from "@/views/projects/CreateProject.vue";
 import LoginView from "@/views/users/LoginView.vue";
->>>>>>> feature-frontend-login
 
 const routes = [
   {
@@ -43,16 +35,17 @@ const routes = [
   {
     path: '/users/login',
     name: 'users/login',
+    component: LoginView
   },
   {
-    path: '/users/login',
-    name: 'users/login',
-    component: LoginView
+    path: '/users/:username',
+    name: 'users/:username',
+    component: () => import('../views/users/ProfileView.vue')
   },
   {
     path: '/projects',
     name: 'projects',
-    component: ShowProjectsView
+    component: () => import('../views/projects/ShowProjects.vue')
   },
   {
     path: '/projects/create',

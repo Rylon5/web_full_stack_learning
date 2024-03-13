@@ -48,7 +48,15 @@ export default {
       this.__submitLoginToServer(loginData)
     },
     __submitLoginToServer(data) {
-      axios.post(`${server.baseURL}/auth/login`, data).then(() => router.push('/home'))
+      try {
+        axios.post(`${server.baseURL}/auth/login`, data).then(response => {
+          localStorage.setItem('token', response.headers['access_token'])}).then(() => {
+          router.push({name: `users/${data.username}`})
+        })
+      }
+      catch (error) {
+        console.log('Error logging in: ' + error.message)
+      }
     }
   }
 }
