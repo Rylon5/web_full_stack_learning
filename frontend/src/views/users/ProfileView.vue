@@ -1,5 +1,6 @@
 <template>
-<h3>Welcome {{ $route.params.username }}</h3>
+  <UsersNavbar/>
+  <h3>Welcome {{ $route.params.username }}</h3>
 </template>
 
 <script setup>
@@ -7,6 +8,7 @@
 import {onMounted} from "vue";
 import router from "@/router";
 import {toast} from "vue3-toastify";
+import UsersNavbar from "@/components/navbars/UsersNavbar.vue";
 
 onMounted( () => {
   const token = localStorage.getItem('token')

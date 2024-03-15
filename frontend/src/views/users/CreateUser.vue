@@ -1,11 +1,5 @@
 <template>
-  <nav>
-    <router-link to="/users/register"> Register </router-link> |
-    <router-link to="/users/login"> Login </router-link> |
-    <router-link to="/users/find"> Find user </router-link> |
-    <router-link to="/users"> User list </router-link>
-  </nav>
-  <hr>
+  <UsersNavbar/>
   <div>
     <div class="col-md-12 form-wrapper">
       <h2> Register new user </h2>

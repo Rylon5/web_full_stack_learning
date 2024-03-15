@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <ProjectsNavbar></ProjectsNavbar>
+    <ProjectsNavbar/>
   </div>
   <div class="container text-center">
     <h5><span class="glyphicon glyphicon-time"></span> Projects: </h5>

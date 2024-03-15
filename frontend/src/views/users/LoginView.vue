@@ -1,26 +1,22 @@
 <template>
-  <nav>
-    <router-link to="/users/register"> Register </router-link> |
-    <router-link to="/users/login"> Login </router-link> |
-    <router-link to="/users/find"> Find user </router-link> |
-    <router-link to="/users"> User list </router-link>
-  </nav>
-  <hr/>
+  <UsersNavbar/>
   <div class="text-center">
     <div class="col-md-12 form-wrapper">
-      <h2>Login</h2>
       <form id="login-user-form" @submit.prevent="loginUser">
-        <div class="form-group col-md-12">
-          <label for="username"> Username </label>
-          <input type="text" v-model="username" id="username" placeholder="Enter username" class="form-control" required>
-        </div>
-        <div class="form-group col-md-12">
-          <label for="password"> Password </label>
-          <input type="text" v-model="password" id="password" placeholder="Enter password" class="form-control" required>
-        </div>
-        <div class="form-group col-md-4 pull-right">
-          <button class="btn btn-success" type="submit"> Login user </button>
-        </div>
+        <fieldset>
+          <legend>Login</legend>
+          <div class="form-group col-md-12">
+            <label for="username"> Username: </label>
+            <input type="text" v-model="username" id="username" placeholder="Enter username" class="form-control" required>
+          </div>
+          <div class="form-group col-md-12">
+            <label for="password" class="password-label"> Password: </label>
+            <input type="text" v-model="password" id="password" placeholder="Enter password" class="form-control" required>
+          </div>
+          <div class="form-group col-md-4 pull-right">
+            <button class="btn btn-success" type="submit"> Login user </button>
+          </div>
+        </fieldset>
       </form>
     </div>
   </div>
@@ -31,8 +27,10 @@ import axios from "axios";
 import {server} from "@/utils/helper";
 import router from "@/router";
 import {toast} from "vue3-toastify";
+import UsersNavbar from "@/components/navbars/UsersNavbar.vue";
 
 export default {
+  components: {UsersNavbar},
   data() {
     return {
       username: "",
@@ -66,5 +64,30 @@ export default {
 </script>
 
 <style scoped>
+* {
+  font-size: 17px;
+}
 
+fieldset {
+  width: 25%;
+  margin: auto;
+}
+
+.form-group {
+  margin: auto;
+  padding: 5px 0;
+}
+
+input {
+  width: 75%;
+  margin: auto;
+}
+
+.btn-success {
+  width: auto;
+}
+
+.password-label {
+  padding-right: 2px;
+}
 </style>

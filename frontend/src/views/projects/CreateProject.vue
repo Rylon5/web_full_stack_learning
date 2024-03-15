@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <ProjectsNavbar></ProjectsNavbar>
+    <ProjectsNavbar/>
   </div>
   <div>
     <div class="col-md-12 form-wrapper">
