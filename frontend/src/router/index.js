@@ -1,10 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import ShowUserView from '@/views/users/ShowUsers.vue'
-import CreateUserView from '@/views/users/CreateUser.vue'
-import FindUserView from "@/views/users/FindUser.vue";
-import ShowProjects from "@/views/projects/ShowProjects.vue";
-import CreateProject from "@/views/projects/CreateProject.vue";
 import LoginView from "@/views/users/LoginView.vue";
 
 const routes = [
@@ -42,9 +38,14 @@ const routes = [
     component: LoginView
   },
   {
+    path: '/users/:username',
+    name: 'users/:username',
+    component: () => import('../views/users/ProfileView.vue')
+  },
+  {
     path: '/projects',
     name: 'projects',
-    component: ShowProjects
+    component: () => import('../views/projects/ShowProjects.vue')
   },
   {
     path: '/projects/create',

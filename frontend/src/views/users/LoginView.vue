@@ -30,6 +30,7 @@
 import axios from "axios";
 import {server} from "@/utils/helper";
 import router from "@/router";
+import {toast} from "vue3-toastify";
 
 export default {
   data() {
@@ -48,7 +49,17 @@ export default {
       this.__submitLoginToServer(loginData)
     },
     __submitLoginToServer(data) {
-      axios.post(`${server.baseURL}/auth/login`, data).then(() => router.push('/home'))
+      try {
+        axios.post(`${server.baseURL}/auth/login`, data).then(response => {
+          localStorage.setItem('token', response.headers['access_token'])}).then(() => {
+          router.push({name: `users/:${data.username}`})
+        })
+      }
+      catch (error) {
+        console.log('Error logging in: ' + error.message)
+        router.push({name: 'users/login'})
+        toast.error('Login failed, wrong username or password')
+      }
     }
   }
 }
