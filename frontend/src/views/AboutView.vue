@@ -28,14 +28,14 @@
   margin: 0 0 25px 25%;
   width: 50%;
   text-align: center;
-  box-shadow: 2px 4px 8px 4px darkseagreen;
+  box-shadow: 2px 2px 4px 2px #17252A;
   padding: 2px 8px;
   border-radius: 5px 5px 5px 5px;
-  transition: 0.3s;
+  transition: 0.2s;
 }
 
 .card:hover {
-  box-shadow: 4px 8px 16px 8px darkmagenta;
+  box-shadow: 2px 4px 8px 4px #17252A;
 }
 
 .card ul {

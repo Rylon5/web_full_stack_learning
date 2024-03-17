@@ -25,7 +25,7 @@
 }
 
 .general-footer a:visited, .general-footer a:active {
-  color: brown;
+  color: blue;
 }
 
 </style>

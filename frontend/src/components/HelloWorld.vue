@@ -66,6 +66,6 @@ li {
   margin: 0 10px;
 }
 a {
-  color: brown;
+  color: #17252A;
 }
 </style>
