@@ -3,18 +3,22 @@
   <div class="text-center">
     <div class="col-md-12 form-wrapper">
       <form id="login-user-form" @submit.prevent="loginUser">
-        <fieldset>
+        <fieldset class="login-field">
           <legend>Login</legend>
           <div class="form-group col-md-12">
-            <label for="username"> Username: </label>
-            <input type="text" v-model="username" id="username" placeholder="Enter username" class="form-control" required>
+            <label for="username"> Username </label>
+            <input type="text" v-model="username" id="username" placeholder="Enter username" class="form-control username-input" required>
           </div>
           <div class="form-group col-md-12">
-            <label for="password" class="password-label"> Password: </label>
-            <input type="text" v-model="password" id="password" placeholder="Enter password" class="form-control" required>
+            <label for="password"> Password </label>
+            <input type="text" v-model="password" id="password" placeholder="Enter password" class="form-control password-input" required>
           </div>
           <div class="form-group col-md-4 pull-right">
-            <button class="btn btn-success" type="submit"> Login user </button>
+            <button class="btn btn-success submit" type="submit"> Sign in </button>
+          </div>
+          <div class="no-account">
+            <p>Don't have an account?</p>
+            <router-link to="/users/register">Create account</router-link>
           </div>
         </fieldset>
       </form>
@@ -63,31 +67,17 @@ export default {
 }
 </script>
 
-<style scoped>
-* {
-  font-size: 17px;
+<style>
+.no-account {
+  margin: 13px auto 5px auto;
 }
 
-fieldset {
-  width: 25%;
-  margin: auto;
+.no-account p, .no-account a {
+  font-size: 12px;
+  text-align: center;
 }
 
-.form-group {
-  margin: auto;
-  padding: 5px 0;
-}
-
-input {
-  width: 75%;
-  margin: auto;
-}
-
-.btn-success {
-  width: auto;
-}
-
-.password-label {
-  padding-right: 2px;
+.no-account a:visited, .no-account a:active {
+  color: blue
 }
 </style>

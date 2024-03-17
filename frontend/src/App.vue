@@ -1,11 +1,12 @@
 <template>
   <nav>
     <router-link to="/">Home</router-link> |
-    <router-link to="/users">User management</router-link> |
+    <router-link to="/users/login">User management</router-link> |
     <router-link to="/projects">Projects</router-link> |
     <router-link to="/about">About</router-link>
   </nav>
   <router-view/>
+  <GeneralFooter></GeneralFooter>
 </template>
 
 <style>
@@ -18,7 +19,7 @@
 }
 
 nav {
-  padding: 30px;
+  padding: 30px 0 10px 0;
 }
 
 nav a {
@@ -27,8 +28,15 @@ nav a {
 }
 
 nav a.router-link-exact-active {
-  color: #42b983;
+  color: brown;
 }
 </style>
-<script setup lang="ts">
+
+<script>
+import GeneralFooter from "@/components/footers/GeneralFooter.vue";
+
+export default {
+  components: {GeneralFooter}
+}
+
 </script>

@@ -1,8 +1,9 @@
 <template>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <UsersNavbar/>
   <div>
-    <div class="col-md-12 form-wrapper">
-      <h2> Register new user </h2>
+    <fieldset class="col-md-12 form-wrapper">
+      <legend> Register new user </legend>
       <form id="create-user-form" @submit.prevent="registerUser">
         <div class="form-group col-md-12">
           <label for="username"> Username </label>
@@ -30,14 +31,14 @@
         </div>
         <div class="form-group col-md-12">
           <label for="mail"> Email </label>
-          <input type="email" id="mail"  v-model="mail" placeholder="Enter mail adress" class="form-control" required>
+          <input type="email" id="mail"  v-model="mail" placeholder="Enter mail address" class="form-control" required>
         </div>
 
         <div class="form-group col-md-4 pull-right">
-          <button class="btn btn-success" type="submit"> Register user </button>
+          <button class="btn btn-success submit" type="submit"> Sign up </button>
         </div>
       </form>
-    </div>
+    </fieldset>
   </div>
 </template>
 
@@ -96,3 +97,9 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+.form-control[type="number"] {
+  appearance: textfield;
+}
+</style>

@@ -10,5 +10,7 @@
 </script>
 
 <style scoped>
-
+nav {
+  margin: -20px auto 10px auto;
+}
 </style>
