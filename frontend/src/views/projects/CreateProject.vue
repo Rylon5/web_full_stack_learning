@@ -4,8 +4,8 @@
   </div>
   <div>
     <div class="col-md-12 form-wrapper">
-      <h2> Create User </h2>
-      <form id="create-user-form" @submit.prevent="createProject">
+      <h2> Create project </h2>
+      <form id="create-project-form" @submit.prevent="createProject">
         <div class="form-group col-md-12">
           <label for="name"> Project name: </label>
           <input type="text" id="name" v-model="name" name="name" class="form-control" placeholder="Enter project name">
@@ -54,9 +54,8 @@ import ProjectsNavbar from "@/components/navbars/ProjectsNavbar.vue";
         this.__submitToServer(projectData)
       },
       __submitToServer(data) {
-        // eslint-disable-next-line no-unused-vars
-        axios.post(`${server.baseURL}/projects`, data).then(response => {
-          router.push({ name: "projects/create" }) });
+        axios.post(`${server.baseURL}/projects`, data)
+            .then(() => router.push({ name: "projects/create" }));
       }
     }
   }

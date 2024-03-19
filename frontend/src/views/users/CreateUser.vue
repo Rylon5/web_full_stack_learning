@@ -2,9 +2,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <UsersNavbar/>
   <div>
-    <fieldset class="col-md-12 form-wrapper">
+    <form id="create-user-form" @submit.prevent="registerUser">
+      <fieldset class="col-md-12 form-wrapper">
       <legend> Register new user </legend>
-      <form id="create-user-form" @submit.prevent="registerUser">
         <div class="form-group col-md-12">
           <label for="username"> Username </label>
           <input type="text" id="username" v-model="username" name="username" class="form-control" placeholder="Enter username" required>
@@ -37,8 +37,8 @@
         <div class="form-group col-md-4 pull-right">
           <button class="btn btn-success submit" type="submit"> Sign up </button>
         </div>
-      </form>
-    </fieldset>
+      </fieldset>
+    </form>
   </div>
 </template>
 
@@ -89,9 +89,8 @@ export default {
       }
     },
     __submitToServer(data) {
-      // eslint-disable-next-line no-unused-vars
-      axios.post(`${server.baseURL}/auth/register/`, data).then(response => {
-        router.push({ name: "home" });
+      axios.post(`${server.baseURL}/auth/register/`, data)
+          .then(() => {router.push({ name: "home" });
       });
     }
   }
