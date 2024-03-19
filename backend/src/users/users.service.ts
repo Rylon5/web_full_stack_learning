@@ -55,4 +55,12 @@ export class UserService {
         }
         return await this.userRepository.delete(user);
     }
+
+    async removeByName(username: string) {
+        const user = await this.findOneByName(username);
+        if (!user) {
+            throw new NotFoundException(`User with name ${username} not found`);
+        }
+        return user;
+    }
 }
