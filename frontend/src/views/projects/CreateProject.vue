@@ -6,22 +6,25 @@
     <div class="col-md-12 form-wrapper">
       <h2> Create project </h2>
       <form id="create-project-form" @submit.prevent="createProject">
-        <div class="form-group col-md-12">
-          <label for="name"> Project name: </label>
-          <input type="text" id="name" v-model="name" name="name" class="form-control" placeholder="Enter project name">
-        </div>
-        <div class="form-group col-md-12">
-          <label for="description"> Project description: </label>
-          <input type="text" id="description" v-model="description" name="description" class="form-control" placeholder="Enter project description">
-        </div>
-        <div class="form-group col-md-12">
-          <label for="link"> Project link: </label>
-          <input type="text" id="link"  v-model="link" name="link" placeholder="Enter project link" class="form-control">
-        </div>
+        <fieldset>
+        <legend>Register new project</legend>
+          <div class="form-group col-md-12">
+            <label for="name"> Project name: </label>
+            <input type="text" id="name" v-model="name" name="name" class="form-control" placeholder="Enter project name">
+          </div>
+          <div class="form-group col-md-12">
+            <label for="description"> Project description: </label>
+            <input type="text" id="description" v-model="description" name="description" class="form-control" placeholder="Enter project description">
+          </div>
+          <div class="form-group col-md-12">
+            <label for="link"> Project link: </label>
+            <input type="text" id="link"  v-model="link" name="link" placeholder="Enter project link" class="form-control">
+          </div>
 
-        <div class="form-group col-md-4 pull-right">
-          <button class="btn btn-success" type="submit"> Create Project </button>
-        </div>
+          <div class="form-group col-md-4 pull-right">
+            <button class="btn btn-success submit" type="submit"> Create Project </button>
+          </div>
+        </fieldset>
       </form>
     </div>
   </div>

@@ -15,17 +15,23 @@
 <style scoped>
 .general-footer, hr {
   width: 100%;
-  margin: 10px auto;
+  margin: auto;
   font-size: 90%;
 }
 
 .general-footer {
   position: absolute;
   bottom: 0;
+  padding-bottom: 10px;
+  background-color: var(--main-red);
 }
 
 .general-footer a:visited, .general-footer a:active {
   color: blue;
+}
+
+hr {
+  margin-bottom: 10px;
 }
 
 </style>
