@@ -1,9 +1,5 @@
 {
   "dependencies": {
-    "@nestjs/jwt": "^10.2.0",
-    "postcss": ">=8.4.31"
-  },
-  "devDependencies": {
-    "postcss": ">=8.4.31"
+    "@nestjs/jwt": "^10.2.0"
   }
 }

@@ -25,17 +25,18 @@ p, h1, h2, h3, h4, h5, h6 {
   isolation: isolate;
 }
 #app {
-  background: #3AAFA9;
+  background: var(--main-gray);
   min-height: 100vh;
 }
 
 fieldset {
   width: 25%;
   margin: 20px auto;
-  box-shadow: 3px 3px 10px 2px #17252A;
+  box-shadow: 3px 3px 10px 2px var(--main-gray);
   border-radius: 10px;
   border: none;
-  background: #FEFFFF;
+  background: var(--main-white);
+  color: var(--main-gray)
 }
 
 fieldset legend {
@@ -55,7 +56,7 @@ fieldset legend {
 }
 
 .submit:hover {
-  background: #EEEEEE;
+  background: #d0d0d0;
 }
 
 .form-group {
@@ -79,7 +80,7 @@ input {
 
 input:focus, input:hover {
   outline: none;
-  background: #EEEEEE;
+  background: #d0d0d0;
   border-radius: 3px;
 }
 
@@ -90,6 +91,14 @@ fieldset label {
 }
 
 hr {
-  color: #17252A;
+  color: var(--main-white);
   margin-bottom: 10px;
+}
+
+nav {
+  background-color: var(--main-red);
+}
+
+.hello a {
+  color: lightblue;
 }
