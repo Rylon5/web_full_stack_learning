@@ -18,7 +18,7 @@
 <script setup lang="ts">
 </script>
 
-<style scoped>
+<style>
 .contact {
   display: grid;
   align-content: space-between;
@@ -33,7 +33,7 @@
 }
 
 .card {
-  margin: 0 0 25px 25%;
+  margin: 25px 0 25px 25%;
   width: 50%;
   text-align: center;
   box-shadow: 2px 2px 4px 2px #17252A;

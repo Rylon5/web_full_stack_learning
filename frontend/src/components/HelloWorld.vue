@@ -65,7 +65,7 @@ li {
   display: inline-block;
   margin: 0 10px;
 }
-a {
-  color: #17252A;
+.hello a {
+  color: lightblue;
 }
 </style>
