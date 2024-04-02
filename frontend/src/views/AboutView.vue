@@ -5,6 +5,7 @@
       This website is my way of learning full stack development, having a platform to host my other various projects on and building a portfolio website.
       It is built with nestjs, vuejs and sqlite. </p>
   </div>
+
   <div class="card">
     <h2>Contact information:</h2>
     <h3>Gerrit Koch</h3>
@@ -45,9 +46,5 @@
 
 .card:hover {
   box-shadow: 2px 4px 8px 4px #17252A;
-}
-
-.card ul {
-  list-style-type: none;
 }
 </style>

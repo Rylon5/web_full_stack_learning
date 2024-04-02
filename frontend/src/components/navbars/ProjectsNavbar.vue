@@ -1,6 +1,6 @@
 <template>
   <nav>
-    <router-link to="/projects/create">Create project</router-link> |
+    <router-link to="/projects/create">Create project</router-link>
     <router-link to="/projects">Project list</router-link>
   </nav>
   <hr>
