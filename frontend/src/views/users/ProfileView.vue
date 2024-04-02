@@ -67,10 +67,10 @@ import {toast} from "vue3-toastify";
 import router from "@/router";
 import {toast} from "vue3-toastify";
 
-onMounted( () => {
+onMounted(() => {
   const token = localStorage.getItem('token')
   if (!token) {
-    router.push({ name: 'users/login'});
+    router.push({ name: '501'});
     toast.error('Please log in to access a profile');
   }
   else console.log(token);

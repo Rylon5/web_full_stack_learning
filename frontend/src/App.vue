@@ -114,6 +114,20 @@ a {
   color: lightblue;
 }
 
+.card {
+  margin: 25px 0 25px 25%;
+  width: 50%;
+  text-align: center;
+  box-shadow: 2px 2px 4px 2px #17252A;
+  padding: 10px 8px;
+  border-radius: 5px 5px 5px 5px;
+  transition: 0.2s;
+  background-color: var(--main-blue);
+}
+
+.card:hover {
+  box-shadow: 2px 4px 8px 4px #17252A;
+}
 </style>
 
 <script>

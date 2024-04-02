@@ -5,7 +5,7 @@
     <router-link to="/projects/create">Projects</router-link>
     <router-link to="/about">About</router-link>
     <router-link to="/404">Error 404</router-link>
-    <router-link to="/501">Error 501</router-link>
+    <router-link to="/401">Error 401</router-link>
   </nav>
   <hr>
   <router-view/>

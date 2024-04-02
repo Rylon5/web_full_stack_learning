@@ -53,13 +53,13 @@ const routes = [
     component: () => import('../views/projects/CreateProject.vue')
   },
   {
-    path: '/404',
+    path: '/:notFound',
     name: '404',
     component: () => import('../components/errors/NotFoundError.vue')
   },
   {
-    path: '/501',
-    name: '501',
+    path: '/401',
+    name: '401',
     component: () => import('../components/errors/NotAuthorizedError.vue')
   }
 ]
